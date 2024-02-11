@@ -15,8 +15,7 @@ export default function Signup() {
   const handleSubmit=async(e)=>{
     e.preventDefault()
     if (!formData.username || !formData.email || !formData.password) {
-      setErrorMessage('Please fill all the fields');
-      return;
+      return setErrorMessage('Please fill all the fields');
     }
     try {
       setLoading(true);
@@ -29,15 +28,18 @@ export default function Signup() {
         body:JSON.stringify(formData)
       });
       const data=await res.json()
+      console.log(data);
       if (data.success===false) {
-       return setErrorMessage(data.message);
+        setLoading(false);
+       return setErrorMessage("Username or Email already exists! Please try again.");
+       
       }
-      setLoading(false);
       if (res.ok) {
         navigate('/signin')
       }
-    } catch (error) {
-      setErrorMessage(data.message);
+    } 
+    catch (error) {
+      setErrorMessage(error.message || "Something went wrong! Please try again.");
       setLoading(false);
     }
   };
