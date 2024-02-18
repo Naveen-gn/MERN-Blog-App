@@ -3,7 +3,7 @@ import {BrowserRouter , Route, Routes} from 'react-router-dom'
 import  Home from './pages/Home'
 import  About from './pages/About'
 import  Dashboard from './pages/Dashboard'
-import  Project from './pages/Project'
+import  Project from './pages/Projects'
 import  Signin from './pages/Signin'
 import  Signup from './pages/Signup'
 import Header from './Components/Header';
@@ -28,7 +28,7 @@ export default function App() {
       <Route path="/update-post/:postId" element={<UpdatePost/>} />
       </Route>
 
-      <Route path="/project" element={<Project/>} />
+      <Route path="/projects" element={<Project/>} />
       <Route path="/post/:postSlug" element={<PostPage/>} />
       <Route path="/signin" element={<Signin/>} />
       <Route path="/signup" element={<Signup/>} />
