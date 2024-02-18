@@ -9,6 +9,8 @@ import  Signup from './pages/Signup'
 import Header from './Components/Header';
 import Footer from './Components/Footer'
 import PrivateRoute from './Components/PrivateRoute'
+import OnlyAdminPrivateRoute from './Components/OnlyAdminPrivateRoute'
+import CreatePost from './Pages/CreatePost'
 export default function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,9 @@ export default function App() {
       <Route path="/about" element={<About/>} />
       <Route element={<PrivateRoute/>} >
       <Route path="/dashboard" element={<Dashboard/>} />
+      </Route>
+      <Route element={<OnlyAdminPrivateRoute/>} >
+      <Route path="/create-post" element={<CreatePost/>} />
       </Route>
       <Route path="/project" element={<Project/>} />
       <Route path="/signin" element={<Signin/>} />
