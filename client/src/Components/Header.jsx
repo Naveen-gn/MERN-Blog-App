@@ -54,8 +54,8 @@ export default function Header() {
         to='/'
         className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
       >
-        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-          Sahand's
+        <span className='px-2 py-1 bg-gradient-to-r from-pink-600 via-pink-600 to-violet-600 rounded-lg text-white'>
+          Naveen's
         </span>
         Blog
       </Link>
@@ -69,17 +69,15 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
-      <Button className='w-12 h-10 lg:hidden' color='gray' pill>
-        <AiOutlineSearch />
-      </Button>
+      
       <div className='flex gap-2 md:order-2'>
         <Button
-          className='w-12 h-10 hidden sm:inline'
+          className='w-12 h-10 '
           color='gray'
           pill
           onClick={() => dispatch(toggleTheme())}
         >
-          {theme === 'light' ? <FaSun /> : <FaMoon />}
+          {theme === 'light' ? <FaMoon /> : <FaSun />}
         </Button>
         {currentUser ? (
           <Dropdown
@@ -102,7 +100,7 @@ export default function Header() {
             <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
           </Dropdown>
         ) : (
-          <Link to='/sign-in'>
+          <Link to='/signin'>
             <Button gradientDuoTone='purpleToBlue' outline>
               Sign In
             </Button>
