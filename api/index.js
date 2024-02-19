@@ -35,7 +35,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/post', postRoutes);
 app.use('/api/comment', commentRoutes);
 
-  app.use(express.static(path.join(__dirname,'/client')));
+  app.use(express.static(path.join(__dirname,'/client/dist')));
   //app.use(express.static(path.join(__dirname, 'client')));
 
 app.get('*', (req, res) => {
