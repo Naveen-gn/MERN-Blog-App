@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   server: {
     proxy: {
-      '/api': 'http://localhost:5000',
-      secure: false,
+      '/api': 'https://mern-blog-app-pi.vercel.app/',
+      secure: true,
     },
   },
   plugins: [react()],
