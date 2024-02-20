@@ -4,7 +4,7 @@ import react from "file:///D:/GitHub/MERN-Blog-App/client/node_modules/@vitejs/p
 var vite_config_default = defineConfig({
   server: {
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api": "https://naveen-mern-blog-app-server.vercel.app/",
       secure: false
     }
   },
