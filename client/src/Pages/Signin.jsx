@@ -40,7 +40,7 @@ export default function SignIn() {
       }
     } catch (error) {
       // dispatch(signInFailure(error.message))
-      alert(error.message)
+      console.log(error.message)
     }
   };
   return (
