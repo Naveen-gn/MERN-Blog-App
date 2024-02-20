@@ -5,13 +5,13 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   server: {
     proxy: {
-      '/api': 'https://mern-blog-app-pi.vercel.app/',
+      '/api': 'https://naveen-mern-blog-app-server.vercel.app/',
       secure: true,
     },
   },
   plugins: [react()],
   build: {
-    outDir: '../dist',
+    outDir: '../build',
     emptyOutDir: false,// Specify the output directory
   }
 })
