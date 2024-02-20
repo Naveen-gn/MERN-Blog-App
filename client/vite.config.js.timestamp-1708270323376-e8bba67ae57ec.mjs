@@ -5,7 +5,7 @@ var vite_config_default = defineConfig({
   server: {
     proxy: {
       "/api": "https://naveen-mern-blog-app-server.vercel.app/",
-      secure: false
+      secure: true
     }
   },
   plugins: [react()]
