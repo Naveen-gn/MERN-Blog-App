@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'https://naveen-mern-blog-app-server.vercel.app',
-      secure: true,
+      secure: false,
     },
   },
   plugins: [react()],
