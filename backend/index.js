@@ -38,10 +38,10 @@ app.get("/", (req, res) => {
 });
 
 
-app.use('/api/user', userRoutes);
-app.use('/api/auth', authRoutes);
-app.use('/api/post', postRoutes);
-app.use('/api/comment', commentRoutes);
+app.use('/user', userRoutes);
+app.use('/auth', authRoutes);
+app.use('/post', postRoutes);
+app.use('/comment', commentRoutes);
 
 app.use(express.static(path.join(__dirname,'/client/dist')));
 
