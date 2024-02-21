@@ -7,9 +7,11 @@ import postRoutes from './routes/post.route.js';
 import commentRoutes from './routes/comment.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-
+import cors from 'cors';
 
 dotenv.config();
+
+
 
 mongoose
   .connect(process.env.MONGO)
@@ -23,7 +25,8 @@ mongoose
 const __dirname = path.resolve();
 
 const app = express();
-
+app.use(cors());
+app.options("*", corsOptionsDelegate);
 app.use(express.json());
 app.use(cookieParser());
 
