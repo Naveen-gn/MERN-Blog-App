@@ -7,9 +7,18 @@ import postRoutes from './routes/post.route.js';
 import commentRoutes from './routes/comment.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-
+import cors from 'cors';
 
 dotenv.config();
+
+const corsOptions = {
+  origin: ['https://naveen-mern-blog.vercel.app'],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // enable set cookie
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 mongoose
   .connect(process.env.MONGO)
